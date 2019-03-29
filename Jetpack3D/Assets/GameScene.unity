@@ -146,6 +146,7 @@ MonoBehaviour:
   gameCamera: {fileID: 534669904}
   scoreText: {fileID: 2044570030}
   timeAliveText: {fileID: 1434354236}
+  hiscoreText: {fileID: 0}
   restartButton: {fileID: 214662031}
   blockPrefabs:
   - {fileID: 4733338813004136849, guid: b41c9eae76cf24e4ca8c07bf92ed1ce8, type: 3}
@@ -153,6 +154,10 @@ MonoBehaviour:
   - {fileID: 4733338813004136849, guid: ead5597ef28794251bae76b914ebfe35, type: 3}
   - {fileID: 4733338813004136849, guid: efbe104f3d5da43f5b3fe8894c966852, type: 3}
   - {fileID: 4733338813004136849, guid: b7afa979bfbc7409ba76eb694a3f3371, type: 3}
+  - {fileID: 4733338813004136849, guid: aa5d46dc1c62343b3a1a81d32b316f7d, type: 3}
+  - {fileID: 4733338813004136849, guid: 3681242535f4341599fc7da165afa24d, type: 3}
+  - {fileID: 4733338813004136849, guid: 621a0f66479b7466d963c3a73544a3a4, type: 3}
+  - {fileID: 4733338813004136849, guid: 3639eb80dd03b4a149711008316a146c, type: 3}
 --- !u!4 &35027225
 Transform:
   m_ObjectHideFlags: 0
@@ -275,7 +280,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 320, y: 60}
+  m_SizeDelta: {x: 640, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214662031
 MonoBehaviour:
@@ -565,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.77254903, g: 0.77254903, b: 0.77254903, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -747,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

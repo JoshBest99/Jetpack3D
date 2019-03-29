@@ -1,10 +1,17 @@
 ﻿<Properties StartupConfiguration="{E2DEDEC4-A65A-BFFB-EDF2-0E4A861E142A}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Controllers/GameSceneController.cs">
+    <Files>
+      <File FileName="Assets/Controllers/GameSceneController.cs" Line="13" Column="31" />
+      <File FileName="Assets/Controllers/PlayerController.cs" Line="31" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/joshuabest/Desktop/Unity/Jetpack3D/Jetpack3D/Assets/Controllers/PlayerController.cs" relfile="Assets/Controllers/PlayerController.cs" line="32" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

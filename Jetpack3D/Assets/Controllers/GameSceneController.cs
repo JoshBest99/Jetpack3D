@@ -11,6 +11,7 @@ public class GameSceneController : MonoBehaviour
     public Camera gameCamera;
     public Text scoreText;
     public Text timeAliveText;
+    public Text hiscoreText;
     public Button restartButton;
 
     public GameObject[] blockPrefabs;
@@ -19,21 +20,49 @@ public class GameSceneController : MonoBehaviour
     private float safeArea = 30;
     private bool isGameOver;
     private float ellapsedTime;
+    private float startTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        ellapsedTime = Time.time;
+        startTime = Time.time;
         restartButton.gameObject.SetActive(false);
+
+        if (PlayerPrefs.HasKey("hiscore"))
+        {
+            hiscoreText.text = "Hiscore: " + PlayerPrefs.GetFloat("hiscore");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        while(player!= null && blockPointer < player.transform.position.x + safeArea)
+        if(player != null)
         {
+            ellapsedTime = Time.time - startTime;
+            string minutes = ((int)ellapsedTime / 60).ToString();
+            string seconds = (ellapsedTime % 60).ToString("f2");
 
-            timeAliveText.text = (Time.time - ellapsedTime).ToString();
+            timeAliveText.text = minutes + ":" + seconds;
+
+            if (PlayerPrefs.HasKey("hiscore"))
+            {
+                if (player.score > PlayerPrefs.GetFloat("hiscore"))
+                {
+                    hiscoreText.text = "Hiscore: " + player.score;
+                }
+            }
+            else if(PlayerPrefs.HasKey("hiscore") == false || PlayerPrefs.GetFloat("hiscore") < player.score)
+            {
+
+            hiscoreText.text = "Hiscore: " + PlayerPrefs.GetFloat("hiscore");
+
+            }
+
+        }
+
+        while (player != null && blockPointer < player.transform.position.x + safeArea)
+        {
 
             int blockIndex = Random.Range(0, blockPrefabs.Length);
 
@@ -61,6 +90,7 @@ public class GameSceneController : MonoBehaviour
             );
 
             scoreText.text = "Score: " + player.score;
+
         }
         else
         {
@@ -76,6 +106,21 @@ public class GameSceneController : MonoBehaviour
 
     public void restartGame()
     {
+        if (PlayerPrefs.HasKey("hiscore"))
+        {
+            if (PlayerPrefs.GetFloat("hiscore") < player.score)
+            {
+                PlayerPrefs.SetFloat("hiscore", player.score);
+                PlayerPrefs.Save();
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("hiscore", player.score);
+            PlayerPrefs.Save();
+        }
+
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
